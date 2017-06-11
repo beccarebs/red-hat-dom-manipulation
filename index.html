@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>DOM Manipulation</title>
-  </head>
-  <body>
-  
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>DOM Manipulation</title>
+	</head>
+	<body>
+		<h6>Counter: <span id="counter">100</span></h6>
+		<textarea onkeyup="textCounter(this,100);" id="message"></textarea>
+
+		<script>
+			function textCounter(textField, maxChars)
+			{
+				var countfield = document.getElementById('counter');
+
+				if ( textField.value.length > maxChars) {
+					textField.value = textField.value.substring( 0, maxChars );
+					return false;
+				} else {
+					countfield.innerHTML = maxChars - textField.value.length;
+				}
+			}
+		</script>
+	</body>
 </html>
