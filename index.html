@@ -18,7 +18,15 @@
 					textField.value = textField.value.substring( 0, maxChars );
 					return false;
 				} else {
-					countfield.innerHTML = maxChars - textField.value.length;
+					var countNumber = maxChars - textField.value.length;
+
+					if(countNumber <= 5){
+						countfield.style.color = 'red';
+					}else{
+						countfield.style.color = 'black';
+					}
+
+					countfield.innerHTML = countNumber;
 				}
 			}
 		</script>
